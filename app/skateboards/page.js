@@ -16,13 +16,13 @@ export default function SkateboardsPage() {
         {skateboards.map((skateboard) => {
           return (
             <Fragment key={skateboard.id}>
+              <h2 key={skateboard.id}>{skateboard.productName}</h2>
               <Image
                 src={`/images/${skateboard.productName}-${skateboard.id}.jpg`}
                 alt={skateboard.type}
                 width="200"
                 height="250"
               />
-              <h2 key={skateboard.id}>{skateboard.productName}</h2>
             </Fragment>
           );
         })}

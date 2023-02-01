@@ -9,7 +9,7 @@ import styles from './global.scss';
 export default function HomePage() {
   return (
     <main>
-      Skate || Buy && Skate
+      <h1>Skate || Buy && Skate</h1>
       <GenerateButton />
       <br />
       <Image className={styles.images} src={skateboards} alt="skateboards" />
