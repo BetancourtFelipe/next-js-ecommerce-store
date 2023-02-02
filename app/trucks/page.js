@@ -1,10 +1,7 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Fragment } from 'react';
-
-const trucks = [
-  { id: 9, productName: 'Independent', type: 'truck1', price: '5000' },
-  { id: 10, productName: 'Venture', type: 'truck2', price: '4300' },
-];
+import { trucks } from '../../database/trucks';
 
 export default function TrucksPage() {
   return (
@@ -14,13 +11,17 @@ export default function TrucksPage() {
         {trucks.map((truck) => {
           return (
             <Fragment key={truck.id}>
-              <h2 key={truck.id}>{truck.productName}</h2>
-              <Image
-                src={`/images/${truck.productName}-${truck.id}.webp/`}
-                alt={truck.id}
-                width="200"
-                height="250"
-              />
+              <Link href={`/trucks/${truck.productName.toLowerCase()}`}>
+                <h2 key={truck.id}>{truck.productName}</h2>
+              </Link>
+              <Link href={`/trucks/${truck.productName.toLowerCase()}`}>
+                <Image
+                  src={`/images/${truck.productName}-${truck.id}.webp`}
+                  alt={truck.id}
+                  width="200"
+                  height="250"
+                />
+              </Link>
             </Fragment>
           );
         })}
