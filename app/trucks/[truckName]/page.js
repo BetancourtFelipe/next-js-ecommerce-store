@@ -6,6 +6,7 @@ export default function TruckPage(props) {
     return truck.productName.toLowerCase() === props.params.truckName;
   });
 
+  console.log(singleTruck);
   return (
     <>
       <h1>{singleTruck.productName}</h1>
