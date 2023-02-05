@@ -1,10 +1,16 @@
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
 import { accessories } from '../../../database/accessories';
 
 export default function AccessoryPage(props) {
   const singleAccessory = accessories.find((accessory) => {
     return accessory.productName.toLowerCase() === props.params.accessoryName;
   });
+
+  if (!singleAccessory) {
+    throw new Error('this action does not exist');
+    // notFound();
+  }
 
   return (
     <>

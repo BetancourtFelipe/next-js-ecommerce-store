@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
 import { trucks } from '../../../database/trucks';
 
 export default function TruckPage(props) {
@@ -7,6 +8,9 @@ export default function TruckPage(props) {
   });
 
   console.log(singleTruck);
+  if (!singleTruck) {
+    notFound();
+  }
   return (
     <>
       <h1>{singleTruck.productName}</h1>

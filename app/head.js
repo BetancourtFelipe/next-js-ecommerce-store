@@ -2,10 +2,10 @@ export default function RootHead() {
   // This may change in the future
   return (
     <>
-      <title>Skate || Buy</title>
+      <title>Skate || Buy && Skate</title>
       <meta
         name="description"
-        content="Skateboard equipment and much more.. "
+        content="Skateboards, equipment and much more up to come!.. "
       />
       <link rel="icon" href="/favicon.ico" />
     </>

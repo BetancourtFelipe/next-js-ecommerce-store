@@ -1,10 +1,14 @@
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
 import { wheels } from '../../../database/wheels';
 
 export default function WheelPage(props) {
   const singleWheel = wheels.find((wheel) => {
     return wheel.productName.toLowerCase() === props.params.wheelName;
   });
+  if (!singleWheel) {
+    notFound();
+  }
   return (
     <>
       <h1>{singleWheel.productName}</h1>

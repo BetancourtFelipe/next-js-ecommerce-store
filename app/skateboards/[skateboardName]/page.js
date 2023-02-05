@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
 import { skateboards } from '../../../database/skateboard';
 
 export default function SkateboardPage(props) {
@@ -6,6 +7,10 @@ export default function SkateboardPage(props) {
     return skateboard.productName.toLowerCase() === props.params.skateboardName;
   });
   console.log(singleSkateboard);
+
+  if (!singleSkateboard) {
+    notFound();
+  }
   return (
     <>
       <h1>{singleSkateboard.productName}</h1>

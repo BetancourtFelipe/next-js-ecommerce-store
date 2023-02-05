@@ -1,5 +1,6 @@
 import './global.scss';
 import Link from 'next/link';
+import CookieBanner from './CookieBanner';
 import styles from './layout.module.scss';
 
 export default function RootLayout({ children }) {
@@ -7,6 +8,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head />
       <body>
+        <CookieBanner />
         <header className={styles.header}>
           <nav className={styles.nav}>
             <div>
@@ -21,7 +23,7 @@ export default function RootLayout({ children }) {
         </header>
         {children}
         <footer className={styles.footer}>
-          copyright Skate || Buy World Wide 2023
+          copyright Skate || Buy && Skate World Wide 2023
         </footer>
       </body>
     </html>
