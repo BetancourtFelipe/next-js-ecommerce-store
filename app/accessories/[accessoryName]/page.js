@@ -1,10 +1,12 @@
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { accessories } from '../../../database/accessories';
+import Accessory from './accessory';
 
-export default function AccessoryPage(props) {
+export default function AccessoryPage({ params }) {
   const singleAccessory = accessories.find((accessory) => {
-    return accessory.productName.toLowerCase() === props.params.accessoryName;
+    return accessory.productName.toLowerCase() === params.accessoryName;
   });
 
   if (!singleAccessory) {
@@ -23,6 +25,7 @@ export default function AccessoryPage(props) {
           width="200"
           height="250"
         />
+        <Accessory accessory={singleAccessory} />
       </main>
     </>
   );

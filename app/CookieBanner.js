@@ -1,15 +1,18 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { getLocalStorage, setLocalStorage } from '../utils/localStorage';
 
 export default function CookieBanner() {
-  const localStorageValue = JSON.parse(
-    window.localStorage.getItem('areCookiesTermsAccepted'),
-  );
+  const [areCookiesTermsAccepted, setAreCookiesTermsAccepted] = useState(false);
 
-  const initialState = localStorageValue === null ? true : localStorageValue;
+  useEffect(() => {
+    const localStorageValue = getLocalStorage('areCookiesTermsAccepted');
 
-  const [areCookiesTermsAccepted, setAreCookiesTermsAccepted] =
-    useState(initialState);
+    const initialState =
+      localStorageValue === undefined ? true : localStorageValue;
+
+    setAreCookiesTermsAccepted(initialState);
+  }, []);
 
   return (
     !areCookiesTermsAccepted && (
@@ -18,10 +21,8 @@ export default function CookieBanner() {
         <button
           onClick={() => {
             setAreCookiesTermsAccepted(false);
-            window.localStorage.setItem(
-              'areCookiesTermsAccepted',
-              JSON.stringify(true),
-            );
+
+            setLocalStorage('areCookiesTermsAccepted', true);
           }}
         >
           Accept

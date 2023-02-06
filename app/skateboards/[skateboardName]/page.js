@@ -2,9 +2,9 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { skateboards } from '../../../database/skateboard';
 
-export default function SkateboardPage(props) {
+export default function SkateboardPage({ params }) {
   const singleSkateboard = skateboards.find((skateboard) => {
-    return skateboard.productName.toLowerCase() === props.params.skateboardName;
+    return skateboard.productName.toLowerCase() === params.skateboardName;
   });
   console.log(singleSkateboard);
 

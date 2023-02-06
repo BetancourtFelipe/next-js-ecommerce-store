@@ -2,9 +2,9 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { wheels } from '../../../database/wheels';
 
-export default function WheelPage(props) {
+export default function WheelPage({ params }) {
   const singleWheel = wheels.find((wheel) => {
-    return wheel.productName.toLowerCase() === props.params.wheelName;
+    return wheel.productName.toLowerCase() === params.wheelName;
   });
   if (!singleWheel) {
     notFound();
