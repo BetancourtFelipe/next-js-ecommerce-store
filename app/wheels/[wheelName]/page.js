@@ -20,6 +20,7 @@ export default function WheelPage({ params }) {
           width="200"
           height="250"
         />
+        <p>{singleWheel.productDescription.toLowerCase()}</p>
       </main>
     </>
   );

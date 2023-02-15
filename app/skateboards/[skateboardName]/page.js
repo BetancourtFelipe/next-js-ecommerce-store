@@ -22,6 +22,7 @@ export default function SkateboardPage({ params }) {
           width="200"
           height="250"
         />
+        <p>{singleSkateboard.productDescription.toLowerCase()}</p>
       </main>
     </>
   );

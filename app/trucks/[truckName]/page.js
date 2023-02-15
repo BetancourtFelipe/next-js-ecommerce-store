@@ -22,6 +22,7 @@ export default function TruckPage({ params }) {
           width="200"
           height="250"
         />
+        <p>{singleTruck.productDescription.toLowerCase()}</p>
       </main>
     </>
   );

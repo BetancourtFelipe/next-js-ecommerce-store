@@ -25,6 +25,7 @@ export default function AccessoryPage({ params }) {
           width="200"
           height="250"
         />
+        <h4>{singleAccessory.productDescription.toLowerCase()}</h4>
         <Accessory accessory={singleAccessory} />
       </main>
     </>
