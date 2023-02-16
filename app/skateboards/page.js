@@ -1,14 +1,37 @@
+import { cookies } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Fragment } from 'react';
 import { skateboards } from '../../database/skateboard';
 
 export default function SkateboardsPage() {
+  const skateboardsCookie = cookies().get('skateboardsCookie');
+
+  let skateboardsCookieParsed = [];
+
+  if (skateboardsCookie) {
+    skateboardsCookieParsed = JSON.parse(skateboardsCookie.value);
+  }
+
+  const skateboardsWithItems = skateboards.map((skateboard) => {
+    const skateboardWithItems = { ...skateboard, items: 0 };
+
+    const skateboardInCookie = skateboardsCookieParsed.find(
+      (skateboardObject) => skateboard.id === skateboardObject,
+    );
+
+    if (skateboardInCookie) {
+      skateboardWithItems.items = skateboardInCookie.items;
+    }
+
+    return skateboardWithItems;
+  });
+
   return (
     <>
       <h1>Skateboards</h1>
       <main>
-        {skateboards.map((skateboard) => {
+        {skateboardsWithItems.map((skateboard) => {
           return (
             <Fragment key={skateboard.id}>
               <Link
@@ -26,6 +49,7 @@ export default function SkateboardsPage() {
                   height="250"
                 />
               </Link>
+              <p>items: {skateboard.items}</p>
             </Fragment>
           );
         })}

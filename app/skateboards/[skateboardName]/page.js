@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { skateboards } from '../../../database/skateboard';
+import Skateboard from './skateboard';
 
 export default function SkateboardPage({ params }) {
   const singleSkateboard = skateboards.find((skateboard) => {
@@ -23,6 +24,7 @@ export default function SkateboardPage({ params }) {
           height="250"
         />
         <p>{singleSkateboard.productDescription.toLowerCase()}</p>
+        <Skateboard skateboard={singleSkateboard} />
       </main>
     </>
   );
