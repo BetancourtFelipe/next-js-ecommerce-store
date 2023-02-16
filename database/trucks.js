@@ -6,7 +6,7 @@ export const trucks = [
     productName: 'independent',
     type: 'trucks',
     productDescription:
-      'Mason Silva Pro Skateboard Independent Truck Co. truck Polished baseplate with a black hanger Orange medium bushings and black nuts 55.0 millimeters high Baseplate and hanger made of 356 T6 aluminum, axle pin made of 4140 chromoly steel, grade 8 kingpin Weight 369 grams, hanger 149 millimeters, axle 8.5 inches 149 is best for decks 8.25 to 8.5 inches wide. Attention: Trucks are sold individually. For a pair of trucks please choose two. .',
+      'Mason Silva Pro Skateboard Independent Truck Co. truck Polished baseplate with a black hanger Orange medium bushings and black nuts 55.0 millimeters high Baseplate and hanger made of 356 T6 aluminum, axle pin made of 4140 chromo steel, grade 8 kingpin Weight 369 grams, hanger 149 millimeters, axle 8.5 inches 149 is best for decks 8.25 to 8.5 inches wide. Attention: Trucks are sold individually. For a pair of trucks please choose two. .',
     price: '5000',
   },
   {

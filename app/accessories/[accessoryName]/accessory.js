@@ -29,6 +29,11 @@ export default function Accessory(props) {
             foundAccessory.items++;
 
             setStringifiedCookie('accessoriesCookie', accessoriesInCookies);
+          } else {
+            setStringifiedCookie('accessoriesCookie', [
+              ...accessoriesInCookies,
+              { id: props.accessory.id, item: 1 },
+            ]);
           }
         }}
       >
