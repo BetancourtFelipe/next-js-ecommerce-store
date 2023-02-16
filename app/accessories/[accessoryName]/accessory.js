@@ -7,7 +7,32 @@ export default function Accessory(props) {
     <div>
       <h2>{props.accessory.productName}</h2>
       <p>{props.type}</p>
-      <button>- item</button>
+      <button
+        onClick={() => {
+          const accessoriesInCookies = getParsedCookie('accessoriesCookie');
+
+          if (!accessoriesInCookies) {
+            return;
+          }
+
+          const foundAccessory = accessoriesInCookies.find(
+            (AccessoryInCookie) => {
+              return AccessoryInCookie.id === props.Accessory.id;
+            },
+          );
+
+          if (foundAccessory) {
+            foundAccessory.items--;
+
+            if (foundAccessory.items < 0) {
+              foundAccessory.items = 0;
+            }
+            setStringifiedCookie('accessoriesCookie', accessoriesInCookies);
+          }
+        }}
+      >
+        - item
+      </button>
       <button
         onClick={() => {
           const accessoriesInCookies = getParsedCookie('accessoriesCookie');
@@ -39,6 +64,7 @@ export default function Accessory(props) {
       >
         + item
       </button>
+      <button>Add To Cart</button>
     </div>
   );
 }

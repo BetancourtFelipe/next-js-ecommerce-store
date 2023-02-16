@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { trucks } from '../../../database/trucks';
+import Truck from './truck';
 
 export default function TruckPage({ params }) {
   const singleTruck = trucks.find((truck) => {
@@ -23,6 +24,7 @@ export default function TruckPage({ params }) {
           height="250"
         />
         <p>{singleTruck.productDescription.toLowerCase()}</p>
+        <Truck trucks={singleTruck} />
       </main>
     </>
   );

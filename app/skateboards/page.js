@@ -17,7 +17,7 @@ export default function SkateboardsPage() {
     const skateboardWithItems = { ...skateboard, items: 0 };
 
     const skateboardInCookie = skateboardsCookieParsed.find(
-      (skateboardObject) => skateboard.id === skateboardObject,
+      (skateboardObject) => skateboard.id === skateboardObject.id,
     );
 
     if (skateboardInCookie) {
