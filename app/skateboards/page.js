@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Fragment } from 'react';
 import { skateboards } from '../../database/skateboard';
+import styles from './page.module.scss';
 
 export default function SkateboardsPage() {
   const skateboardsCookie = cookies().get('skateboardsCookie');
@@ -29,11 +30,11 @@ export default function SkateboardsPage() {
 
   return (
     <>
-      <h1>Skateboards</h1>
-      <main>
+      <h1 className={styles.header}>Skateboards</h1>
+      <main className={styles.main}>
         {skateboardsWithItems.map((skateboard) => {
           return (
-            <Fragment key={skateboard.id}>
+            <div key={skateboard.id} className={styles.cart}>
               <Link
                 href={`/skateboards/${skateboard.productName.toLowerCase()}`}
               >
@@ -49,8 +50,11 @@ export default function SkateboardsPage() {
                   height="250"
                 />
               </Link>
+
+              <h3>{skateboard.type}</h3>
+              <p>price: {skateboard.price}</p>
               <p>items: {skateboard.items}</p>
-            </Fragment>
+            </div>
           );
         })}
       </main>

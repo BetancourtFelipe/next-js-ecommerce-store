@@ -7,7 +7,7 @@ export default function RootHead() {
         name="description"
         content="Skateboards, equipment and much more up to come!.. "
       />
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/skateboard.png" />
     </>
   );
 }

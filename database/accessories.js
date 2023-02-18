@@ -1,12 +1,10 @@
-import fs from 'node:fs';
-
 export const accessories = [
   {
     id: 1,
     productName: 'shake',
     type: 'bolts',
     productDescription:
-      'Skateboard Screw Mounting Hardware Set by Shake Junt in Baker Skateboards Colorway 7/8 inch length is right for you if you ride your trucks without risers or shock pads Consists: 8 Black Bolts, 8 Black Nuts, 1 Red Bolt, 1 Red Nut',
+      'Skateboard Screw Mounting Hardware Set by Shake Jun in Baker Skateboards Colorway 7/8 inch length is right for you if you ride your trucks without risers or shock pads Consists: 8 Black Bolts, 8 Black Nuts, 1 Red Bolt, 1 Red Nut',
     price: '300',
   },
 
@@ -24,7 +22,7 @@ export const accessories = [
     productName: 'cruz',
     type: 'gripTape',
     productDescription:
-      'width: 9" length: 33" medium grain perforated for bubble-free application silicon-carbide for longlasting grip heat- and cold-resistant glue Dot logo print MOB Grip x Santa Cruz collaboration',
+      'width: 9" length: 33" medium grain perforated for bubble-free application silicon-carbide for long lasting grip heat- and cold-resistant glue Dot logo print MOB Grip x Santa Cruz collaboration',
     price: '700',
   },
 
@@ -33,7 +31,7 @@ export const accessories = [
     productName: 'trash',
     type: 'gripTape',
     productDescription:
-      'width: 9" length: 33" medium grain perforated for bubble-free application silicon-carbide for long-lasting grip heat and cold resistant glue Thrasher logo print MOB x Thrasher collab',
+      'width: 9" length: 33" medium grain perforated for bubble-free application silicon-carbide for long-lasting grip heat and cold resistant glue Thrasher logo print MOB x Thrasher coll',
     price: '900',
   },
 ];

@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { skateboards } from '../../../database/skateboard';
+import styles from './page.module.scss';
 import Skateboard from './skateboard';
 
 export default function SkateboardPage({ params }) {
   const singleSkateboard = skateboards.find((skateboard) => {
     return skateboard.productName.toLowerCase() === params.skateboardName;
   });
-  console.log(singleSkateboard);
 
   if (!singleSkateboard) {
     notFound();
@@ -15,8 +15,7 @@ export default function SkateboardPage({ params }) {
   return (
     <>
       <h1>{singleSkateboard.productName}</h1>
-      <main>
-        <h2>{singleSkateboard.type}</h2>
+      <main className={styles.singleSkateboard}>
         <Image
           src={`/images/${singleSkateboard.productName}-${singleSkateboard.id}.jpg`}
           alt={singleSkateboard.type}
@@ -24,7 +23,9 @@ export default function SkateboardPage({ params }) {
           height="250"
         />
         <p>{singleSkateboard.productDescription.toLowerCase()}</p>
+
         <Skateboard skateboard={singleSkateboard} />
+        <h2>{singleSkateboard.type}</h2>
       </main>
     </>
   );

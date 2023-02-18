@@ -13,11 +13,12 @@ export default function RootLayout({ children }) {
           <nav className={styles.nav}>
             <div>
               <Link href="/">Home</Link>
+              <Link href="/products">Products</Link>
               <Link href="/skateboards">Skateboards</Link>
               <Link href="/wheels">Wheels</Link>
               <Link href="/trucks">Trucks</Link>
               <Link href="/accessories">Accessories</Link>
-              <Link href="/card">Cart</Link>
+              <Link href="/cart">Cart</Link>
             </div>
           </nav>
         </header>

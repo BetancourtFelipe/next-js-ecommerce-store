@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { wheels } from '../../../database/wheels';
+import Wheel from './wheel';
 
 export default function WheelPage({ params }) {
   const singleWheel = wheels.find((wheel) => {
@@ -21,6 +22,7 @@ export default function WheelPage({ params }) {
           height="250"
         />
         <p>{singleWheel.productDescription.toLowerCase()}</p>
+        <Wheel wheel={singleWheel} />
       </main>
     </>
   );

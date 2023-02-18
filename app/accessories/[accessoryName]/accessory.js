@@ -7,6 +7,7 @@ export default function Accessory(props) {
     <div>
       <h2>{props.accessory.productName}</h2>
       <p>{props.type}</p>
+
       <button
         onClick={() => {
           const accessoriesInCookies = getParsedCookie('accessoriesCookie');
@@ -64,6 +65,7 @@ export default function Accessory(props) {
       >
         + item
       </button>
+
       <button>Add To Cart</button>
     </div>
   );

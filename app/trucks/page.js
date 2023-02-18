@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Fragment } from 'react';
 import { trucks } from '../../database/trucks';
+import styles from './page.module.scss';
 
 export default function TrucksPage() {
   const trucksCookie = cookies().get('trucksCookie');
@@ -29,12 +30,16 @@ export default function TrucksPage() {
   return (
     <>
       <h1>Trucks</h1>
-      <main>
+      <main className={styles.main}>
         {trucksWithItems.map((truck) => {
           return (
             <Fragment key={truck.id}>
               <Link href={`/trucks/${truck.productName.toLowerCase()}`}>
                 <h2 key={truck.id}>{truck.productName}</h2>
+                <h3>{truck.type}</h3>
+
+                <p>price: {truck.price}</p>
+                <p>items: {truck.items}</p>
               </Link>
               <Link href={`/trucks/${truck.productName.toLowerCase()}`}>
                 <Image
@@ -44,7 +49,6 @@ export default function TrucksPage() {
                   height="250"
                 />
               </Link>
-              <p>items: {truck.items}</p>
             </Fragment>
           );
         })}

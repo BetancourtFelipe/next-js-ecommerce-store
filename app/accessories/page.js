@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Fragment } from 'react';
 import { accessories } from '../../database/accessories';
+import styles from './page.module.scss';
 
 export default function AccessoriesPage() {
   const accessoriesCookie = cookies().get('accessoriesCookie');
@@ -29,7 +30,7 @@ export default function AccessoriesPage() {
   return (
     <>
       <h1>Accessories</h1>
-      <main>
+      <main className={styles.main}>
         {accessoriesWithItems.map((accessory) => {
           return (
             <Fragment key={accessory.id}>
@@ -37,7 +38,12 @@ export default function AccessoriesPage() {
                 href={`/accessories/${accessory.productName.toLowerCase()}`}
               >
                 <h2 key={accessory.id}>{accessory.productName}</h2>
+                <h3>{accessory.type}</h3>
+
+                <p>price: {accessory.price}</p>
+                <p>items: {accessory.items}</p>
               </Link>
+
               <Link
                 href={`/accessories/${accessory.productName.toLowerCase()}`}
               >
@@ -48,7 +54,6 @@ export default function AccessoriesPage() {
                   height="250"
                 />
               </Link>
-              <p>items: {accessory.items}</p>
             </Fragment>
           );
         })}

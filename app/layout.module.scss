@@ -9,6 +9,7 @@
     & a + a,
     span + a {
       margin-left: 25px;
+      color: white;
     }
 
     & div {
@@ -27,4 +28,5 @@
   margin-top: 20px;
   padding: 15px;
   border-top: 2px solid var(--main-bg-color);
+  color: white;
 }
