@@ -1,0 +1,83 @@
+.cartWrapper {
+  width: 80vw;
+  padding: 20px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.cartHeader {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+// button {
+//   float: right;
+//   color: #ff4136;
+//   font-size: 28px;
+//   border: none;
+//   background-color: transparent;
+//   cursor: pointer;
+// }
+
+.cartItemsGrid {
+  display: grid;
+  grid-template-columns: 2fr 6fr 6fr 1fr;
+  border-bottom: 1px solid black;
+  padding: 10px;
+  align-items: center;
+}
+
+.cartCheckout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 80vw;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  line-height: 30px;
+}
+
+.checkoutText {
+  font-size: 24px;
+}
+
+.checkoutButton {
+  font-size: 24px;
+  cursor: pointer;
+  margin: 12px;
+  width: 100%;
+}
+
+.emptyCart {
+  font-size: 40px;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  align-items: center;
+}
+
+.backButton {
+  font-size: 24px;
+  cursor: pointer;
+  margin: 12px;
+}
+
+.deleteButton {
+  font-size: 24px;
+  color: #ff4136;
+  cursor: pointer;
+}
+
+.countButton {
+  font-size: 24px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.itemCountStyle {
+  display: flex;
+}

@@ -1,9 +1,10 @@
 import { cache } from 'react';
 import { sql } from './connect';
 
-type Product = {
+export type Product = {
   id: number;
   productName: string;
+  productType: string;
   type: string;
   productDescription: string;
   price: string;
@@ -16,4 +17,29 @@ export const getProducts = cache(async () => {
   `;
 
   return products;
+});
+
+// get a single product
+export const getProduct = cache(async (id: number) => {
+  const [product] = await sql<Product[]>`
+    SELECT
+      *
+    FROM
+      products
+    WHERE
+      id = ${id}
+  `;
+  return product;
+});
+
+export const getProductById = cache(async (id: number) => {
+  const [product] = await sql<Product[]>`
+    SELECT
+      *
+    FROM
+      products
+    WHERE
+      id = ${id}
+  `;
+  return product;
 });

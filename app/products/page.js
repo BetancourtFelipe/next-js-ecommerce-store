@@ -1,7 +1,6 @@
 import { cookies } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Fragment } from 'react';
 import { getProducts } from '../../database/products';
 import styles from './page.module.scss';
 
@@ -16,33 +15,31 @@ export default async function ProductsPage() {
     productsCookieParsed = JSON.parse(productsCookie.value);
   }
 
-  const productsWithItems = products.map((product) => {
-    const productWithItems = { ...product, items: 0 };
+  const productsWithQuantity = products.map((product) => {
+    const productWithQuantity = { ...product, Quantity: 0 };
 
     const productInCookie = productsCookieParsed.find(
       (productObject) => product.id === productObject.id,
     );
 
     if (productInCookie) {
-      productWithItems.items = productInCookie.items;
+      productWithQuantity.Quantity = productInCookie.Quantity;
     }
 
-    return productWithItems;
+    return productWithQuantity;
   });
   return (
     <>
-      <h1>Products</h1>
+      <h1 className={styles.header}>Products</h1>
       <main className={styles.main}>
-        {productsWithItems.map((product) => {
+        {productsWithQuantity.map((product) => {
           return (
             <div key={product.id} className={styles.cart}>
-              <Link href={`/products/${product.productName.toLowerCase()}`}>
+              <Link href={`/products/${product.id}`}>
                 <h2 key={product.id}>{product.productName}</h2>
-
-                <p>price: {product.price}</p>
               </Link>
-
-              <Link href={`/products/${product.productName.toLowerCase()}`}>
+              <p>{product.type}</p>
+              <Link href={`/products/${product.id}`}>
                 <Image
                   src={`/images/${product.productName}-${product.id}.webp`}
                   alt={product.type}
@@ -50,6 +47,8 @@ export default async function ProductsPage() {
                   height="250"
                 />
               </Link>
+
+              <p>{product.price}$</p>
             </div>
           );
         })}
