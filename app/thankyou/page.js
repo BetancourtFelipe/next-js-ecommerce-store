@@ -8,7 +8,7 @@ export const dynamic = 'force-dynamic';
 export const metadata = {
   title: 'Thank you for your order!',
   description:
-    "Thank you for using our services! We're excited to contribute to your bouldering journey!",
+    "Thank you for using our services! We're excited to contribute to your skateboarding journey!",
 };
 
 export default function thankYouPage() {
@@ -20,7 +20,7 @@ export default function thankYouPage() {
           Your order was placed successfully!
         </div>
         <div className={styles.climber_image}>
-          <Image src={successful} alt="climbing woman" width="750" />
+          <Image src={successful} alt="skateboarder in the air" width="750" />
         </div>
       </div>
     </main>
