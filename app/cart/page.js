@@ -11,7 +11,7 @@ export const dynamic = 'force-dynamic';
 export const metadata = {
   title: 'Cart',
   description:
-    'Review your chosen items and get excited about stronger bouldering sessions to come',
+    'Review your items and get excited about skateboarding sessions to come',
 };
 
 export default async function CartPage() {
@@ -60,11 +60,7 @@ export default async function CartPage() {
       </div>
       <ul className={styles.ul}>
         {cartItems.map((product) => (
-          <li
-            className={styles.li}
-            key={`product-${product.id}`}
-            data-test-id={`cart-product-${product.id}`}
-          >
+          <li className={styles.li} key={`product-${product.id}`}>
             <Link href={`/products/${product.id}`}>
               <Image
                 src={`/images/${product.productName}-${product.id}.webp`}
@@ -75,34 +71,26 @@ export default async function CartPage() {
               <div>
                 <b>{product.name}</b> {product.price} €
                 <br />
-                <div data-test-id={`cart-product-quantity-${product.id}`}>
+                <div>
                   <b>Amount:</b> {product.amount}
                 </div>
               </div>
             </Link>
-            <DeleteProductButton
-              product={product}
-              data-test-id={`cart-product-remove-${product.id}`}
-              name="remove product"
-            />
+            <DeleteProductButton product={product} name="remove product" />
           </li>
         ))}
       </ul>
-      {/* <p className={styles.p}> */}
       <div className={styles.span_div}>
         <span className={styles.span}>
-          <div data-test-id="cart-total">
+          <div>
             <b>Total:</b> {totalprice} €
           </div>
           <br />
           <Link href="/checkout">
-            <button className={styles.button} data-test-id="cart-checkout">
-              Checkout
-            </button>
+            <button className={styles.button}>Checkout</button>
           </Link>
         </span>
       </div>
-      {/* </p> */}
     </main>
   );
 }

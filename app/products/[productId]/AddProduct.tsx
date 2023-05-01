@@ -16,7 +16,10 @@ export default function AddProduct(props: Props) {
   const router = useRouter();
   return (
     <div>
-      <input data-test-id="product-quantity" readOnly value={count} />
+      <label>
+        total item:
+        <input readOnly value={count} />
+      </label>
       <button
         onClick={() => {
           if (count <= 1) {
@@ -37,7 +40,6 @@ export default function AddProduct(props: Props) {
       </button>
       <button
         name="Add to cart"
-        data-test-id="product-add-to-cart"
         onClick={() => {
           // get cookie
           const productsInCookies = getParsedCookie('cart');
