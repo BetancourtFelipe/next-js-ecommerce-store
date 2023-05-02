@@ -35,7 +35,10 @@ export default async function ProductsPage() {
         {productsWithQuantity.map((product) => {
           return (
             <div key={product.id} className={styles.cart}>
-              <Link href={`/products/${product.id}`}>
+              <Link
+                href={`/products/${product.id}`}
+                className={styles.productName}
+              >
                 <h2 key={product.id}>{product.productName}</h2>
               </Link>
               <p>{product.type}</p>
@@ -47,7 +50,6 @@ export default async function ProductsPage() {
                   height="250"
                 />
               </Link>
-
               <p>{product.price}$</p>
             </div>
           );

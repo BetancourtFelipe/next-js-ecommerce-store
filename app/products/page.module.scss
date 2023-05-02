@@ -5,10 +5,11 @@
 
 .main {
   display: flex;
-  padding: 50px 30px;
-  justify-content: space-evenly;
+  padding: 50px 80px;
+  justify-content: space-around;
   border: solid 1px black;
   flex-wrap: wrap;
+  gap: 40px 70px;
 
   .cart {
     border: solid 1px black;
@@ -19,5 +20,15 @@
     text-align: center;
     text-transform: uppercase;
     color: #e3f2ff;
+    text-decoration: none;
+    &:hover {
+      box-shadow: rgba(214, 7, 7, 0.3) 0px 50px 48px,
+        rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    }
   }
+}
+
+.productName {
+  text-decoration: none;
+  color: #0c6b6d;
 }
