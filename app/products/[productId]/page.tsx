@@ -1,4 +1,4 @@
-import '../../global.scss';
+import '../../global.css';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getProduct } from '../../../database/products';

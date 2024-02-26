@@ -1,4 +1,4 @@
-import '../global.scss';
+import '../global.css';
 import { cookies } from 'next/headers';
 import React from 'react';
 import { getProducts } from '../../database/products';

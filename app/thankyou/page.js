@@ -1,4 +1,4 @@
-import '../global.scss';
+import '../global.css';
 import Image from 'next/image';
 import successful from '../../public/images/successful.webp';
 import styles from './page.module.scss';
