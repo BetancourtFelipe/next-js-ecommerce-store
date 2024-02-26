@@ -1,9 +1,8 @@
-import './global.scss';
+import 'app/global.css';
 import { cookies } from 'next/headers';
 import Link from 'next/link';
 import { getProducts } from '../database/products';
 import CookieBanner from './CookieBanner';
-import styles from './layout.module.scss';
 
 export const metadata = {
   title: {
@@ -52,26 +51,29 @@ export default async function RootLayout({ children }) {
         <head /> will contain the components returned by the nearest parent
         head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
+
       <head />
       <body>
         <CookieBanner />
-        <header className={styles.header}>
-          <nav className={styles.nav}>
-            <div>
+        <header class="text-right">
+          <div className="bg-black">
+            <nav class="bg-black">
               <div>
-                <Link href="/">Home</Link>
-                <Link href="/products">Products</Link>
-                <Link href="/cart">
-                  Cart: <div>{totalQuantity}</div>
-                </Link>
+                <div>
+                  <Link href="/">Home</Link>
+                  <Link href="/products">Products</Link>
+                  <div>
+                    <Link href="/cart">
+                      Cart: <div>{totalQuantity}</div>
+                    </Link>
+                  </div>
+                </div>
               </div>
-            </div>
-          </nav>
+            </nav>
+          </div>
         </header>
         {children}
-        <footer className={styles.footer}>
-          copyright Skate || Buy && Skate World Wide 2023
-        </footer>
+        <footer>copyright Skate || Buy && Skate World Wide 2023</footer>
       </body>
     </html>
   );
