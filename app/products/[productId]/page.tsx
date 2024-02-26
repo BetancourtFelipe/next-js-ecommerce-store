@@ -2,7 +2,6 @@ import '../../global.scss';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getProduct } from '../../../database/products';
-// import { productNotFoundMetadata } from '../../not-found';
 import AddProduct from './AddProduct';
 
 // import styles from './page.module.scss';
@@ -33,12 +32,13 @@ export default async function ProductPage(props: Props) {
         />
         <div>
           <h1>{singleProduct.productName}</h1>
+          <p>
+            {singleProduct.productType}/{singleProduct.type}
+          </p>
           <br />
           <p>{singleProduct.productDescription}</p>
           <div>
-            <div data-test-id="product-price">
-              Price: {singleProduct.price} €
-            </div>
+            <div>Price: {singleProduct.price} €</div>
             <AddProduct product={singleProduct} />
           </div>
         </div>

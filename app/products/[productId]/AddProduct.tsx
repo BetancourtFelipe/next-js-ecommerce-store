@@ -52,9 +52,11 @@ export default function AddProduct(props: Props) {
             return;
           }
 
-          const foundProduct = productsInCookies.find((productInCookies) => {
-            return productInCookies.id === props.product.id;
-          });
+          const foundProduct = productsInCookies.find(
+            (productInCookies: any) => {
+              return productInCookies.id === props.product.id;
+            },
+          );
           // product is inside the cookies
           if (foundProduct) {
             foundProduct.amount += count;

@@ -9,12 +9,9 @@ export default function HomePage() {
   return (
     <main>
       <h1>Skate || Buy && Skate</h1>
-
       <br />
-
       <Image className={styles.image} src={skateboards} alt="skateboards" />
       <Image className={styles.image} src={wheels} alt="wheels" />
-
       <br />
       <Image className={styles.image} src={trucks} alt="trucks" />
       <Image className={styles.image} src={accessories} alt="accessories" />
